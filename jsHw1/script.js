@@ -1,4 +1,4 @@
-let greetings = 'Hello, ' + prompt('What is your name?');
+let greetings = 'Hello,' + ' ' + prompt('What is your name?');
 //создали переменную, которая принимает в себя ответ пользователя и добавляет Hello,
 console.log(greetings);
 //выводим итог в консоль лог
