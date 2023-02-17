@@ -17,20 +17,21 @@ while (Boolean(numberIsRight === false)) {
 
     if (Boolean(numberIsRight === true)) {
         alert(`Your number is ${currentValue}!`);
-        break;
+        break; // if we guessed the number the cycle will stop working and show the message
     } else if (Boolean(numberIsRight === false)) {
         let numberIsLess = confirm(`Is your number less than ${currentValue}?`);
         if (Boolean(numberIsLess === true)) {
-            endNumber = currentValue - 1;
+            endNumber = currentValue - 1; //if the number is less than current value we will make one iteration but the end number of a range will be equal of current value + 1
         } else if (Boolean(numberIsLess === false)) {
             let numberIsMore = confirm(`Is your number over ${currentValue}?`);
             if (Boolean(numberIsMore === true)) {
-                startNumber = currentValue + 1;
+                startNumber = currentValue + 1;// if the number is over then current value we will calculate the new range with start number equals current value plus one
             }
         }
     }
 }
 
+//below you can find my first try. i tried to make it with for cycle but that was very hard
 
 // for (let i = 0; i <= 10; i++) {
 //
