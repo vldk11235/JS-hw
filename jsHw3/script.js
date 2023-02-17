@@ -60,3 +60,11 @@ while (Boolean(numberIsRight === false)) {
 // let numberIsMore = confirm(`Is your number over ${currentValue}?`);
 
 
+let a = 2;
+for (a = 2; a <= 9; a++) {
+    for (let i = 1; i <= 10; i++) {
+        console.log(a * i);
+    }
+}
+
+//it's easy whe we make cyncle inside the other cycle: we mace a counter for incrementing numbers, and then make another one for multiplying each number 10 times in a row
