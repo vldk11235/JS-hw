@@ -67,4 +67,50 @@ for (a = 2; a <= 9; a++) {
     }
 }
 
-//it's easy whe we make cyncle inside the other cycle: we mace a counter for incrementing numbers, and then make another one for multiplying each number 10 times in a row
+//it's easy whe we make cyncle inside the other cycle: we mace a counter for incrementing numbers,
+//and then make another one for multiplying each number 10 times in a row
+
+let userDay = +prompt('Enter the day');
+let userMonth = +prompt('Enter the month');
+let userYear = +prompt('Enter the Year');
+
+//asked the user for data
+
+
+if (userDay <= 28 && userDay > 0) {
+
+    alert(`The next day is ${++userDay}.${userMonth}.${userYear}`);
+}
+
+//the most common cases, when it's not the end of the month or a year
+
+if (userDay === 31 && userMonth === 12) {
+    alert(`The next day is 01.01.${++userYear}`);
+}
+//the new year case Jingle Bells!!!
+
+if (userDay === 28 && userMonth === 2 && userYear % 4) {
+    alert(`The next day is 29.02.${userYear}`);
+}
+// leap year case
+
+if (userDay === 29 && userMonth === 2 && userYear %4) {
+    alert(`The next day is 01.03.${userYear}`)
+}
+
+// leap year case 2
+
+if (userDay === 30 && (userMonth === 2 || 4 || 6 || 9 || 11 )) {
+    alert(`The next day is 01.${++userMonth}.${userYear}`)
+}
+
+//the las day of the 30-days months
+
+if (userDay === 31 && (userMonth === 1 || 3 || 5 || 7 || 8 || 10 ) ) {
+    alert(`The next day is 01.${++userMonth}.${userYear}`)
+}
+
+//the last day of the 31-days months
+
+//to tell the truth i suppose that the last task need more sophisticated solution using cycles or something
+//I just hardcoded that and it's not right i guess. I'll think tomorrow about that
