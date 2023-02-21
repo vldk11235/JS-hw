@@ -41,6 +41,7 @@ function getPerfectRange(min, max) {
     if (max < min) {
         alert("start should be smaller than the end");
         getRange();
+        getPerfectRange(minRange, maxRange);
     }
 
     for (let i = min; i <= max; i++) {
