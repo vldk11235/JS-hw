@@ -15,7 +15,7 @@ function getSum(number) {
 
 function isPerfect(value, number) {
     if (value === number) {
-        alert('Your number is perfect!');
+        // alert('Your number is perfect!');
         return number;
     }
 
@@ -27,13 +27,8 @@ function isPerfect(value, number) {
 // isPerfect(getSum(userNumber), userNumber);
 
 
-
-
-
-
 let minRange;
 let maxRange;
-
 
 
 function getRange(minNumber, maxNumber) {
@@ -42,24 +37,22 @@ function getRange(minNumber, maxNumber) {
 }
 
 
-
 function getPerfectRange(min, max) {
-
+    if (max < min) {
+        alert("start should be smaller than the end");
+        getRange();
+    }
 
     for (let i = min; i <= max; i++) {
         if (isPerfect(getSum(i), i)) {
-
             console.log(i);
         }
     }
 }
+
 getRange();
 getPerfectRange(minRange, maxRange);
 
 
 
-// if (maxNumber < minNumber) {
-//     alert('start should be smaller than the end!!!');
-//     getRange();
-// }
 
