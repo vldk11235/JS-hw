@@ -1,52 +1,65 @@
-let userNumber = +prompt("Enter your number");
+// let userNumber = +prompt("Enter your number");
 
 
-function numberIsPerfect(number) {
-    let summ = 0;
+function getSum(number) {
+    let sum = 0;
     for (let i = 1; i < number; i++) {
 
         if (!(number % i)) {
-            summ = summ + i;
+            sum = sum + i;
         }
     }
 
-    return summ;
+    return sum;
 }
 
-function isPerfect(summ, number) {
-    if (summ === number) {
+function isPerfect(value, number) {
+    if (value === number) {
         alert('Your number is perfect!');
-    } else {
-        alert('Your number is not perfect!');
+        return number;
+    }
+
+    // else {
+    //     alert('Your number is not perfect!');
+    // }
+}
+
+// isPerfect(getSum(userNumber), userNumber);
+
+
+
+
+
+
+let minRange;
+let maxRange;
+
+
+
+function getRange(minNumber, maxNumber) {
+    minRange = +prompt('Enter the start of the range');
+    maxRange = +prompt('Enter the end of the range');
+}
+
+
+
+function getPerfectRange(min, max) {
+
+
+    for (let i = min; i <= max; i++) {
+        if (isPerfect(getSum(i), i)) {
+
+            console.log(i);
+        }
     }
 }
-
-isPerfect(numberIsPerfect(userNumber), userNumber);
-
-
+getRange();
+getPerfectRange(minRange, maxRange);
 
 
 
-
-// let minRange;
-// let maxRange;
-//
-// function getRange() {
-//     minRange = +prompt('Enter the start of the range');
-//     maxRange = +prompt('Enter the end of the range');
-//     if (maxRange < minRange) {
-//         alert('start should be smaller than the end!!!');
-//         getRange();
-//     }
-// }
-//
-// function getPerfectRange(min, max) {
+// if (maxNumber < minNumber) {
+//     alert('start should be smaller than the end!!!');
 //     getRange();
-//     min = minRange;
-//     max = maxRange;
-//     for (let i = min; i <= max; i++) {
-//
-//     }
 // }
-
 
