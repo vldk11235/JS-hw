@@ -36,7 +36,6 @@ function getRange(minNumber, maxNumber) {
     maxRange = +prompt('Enter the end of the range');
 }
 
-
 function getPerfectRange(min, max) {
     if (max < min) {
         alert("start should be smaller than the end");

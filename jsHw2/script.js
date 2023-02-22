@@ -1,5 +1,5 @@
-let moneyAvailable = prompt('How much money do you have?');
-let chocolatePrice = prompt('How much does the chocolate cost?');
+let moneyAvailable = +prompt('How much money do you have?');
+let chocolatePrice = +prompt('How much does the chocolate cost?');
 
 let chocolateToBuy = Math.floor(moneyAvailable / chocolatePrice);
 
