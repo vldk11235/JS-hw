@@ -37,14 +37,14 @@ let fractionCalculator = {
     reduction(a, b) {
         function greatestCommonDivisor(a, b) {
             while (a !== b) {
-                (a > b) ? a -= b : a -= b;
+                (a > b) ? a -= b : b -= a;
             }
             return a;
         }
 
         return {
-            numerator: a / greatestCommonDivisor(),
-            denominator: b / greatestCommonDivisor(),
+            numerator: a / greatestCommonDivisor(a, b),
+            denominator: b / greatestCommonDivisor(a, b),
         }
     },
 
@@ -60,7 +60,6 @@ console.log(fractionCalculator.dividing(commonFraction1.numerator, commonFractio
 //dividing
 console.log(fractionCalculator.reduction(commonFraction1.numerator, commonFraction1.denominator));
 //reduction
-
 
 
 
