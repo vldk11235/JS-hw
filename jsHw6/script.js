@@ -36,7 +36,7 @@ let shoppingList = [
 
 //created our shopping list
 
-shoppingList.sort((a, b) => a.isBought ? 1 : -1);
+shoppingList.sort((a) => a.isBought ? 1 : -1);
 //we sort our array putting the items that are not bought yet at first place
 shoppingList.forEach(item => console.log(item.name));
 //showing our new order of items from not bought to is bought
@@ -49,15 +49,20 @@ let setBought = (name) => {
     } )
 }
 //changing our isBought to true
-let deleteItem = [];
 
-let deleteTheItem = (name) => {
-    deleteItem.push(shoppingList.filter(item => item.name !== name));
-}
+let deleteTheItem = name => shoppingList.filter(item => item.name !== name);
+//function deleting anything we want from our shopping list
+let filteredArray = deleteTheItem('apple');
 //creating new array without apples
-console.log('deleteItem',deleteItem);
+console.log('apple', filteredArray);
 
-deleteTheItem('apple');
+
+
+
+
+
+
+
 
 
 
