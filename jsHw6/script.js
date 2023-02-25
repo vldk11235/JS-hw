@@ -119,8 +119,14 @@ getNotBoughtSum();
 
 console.log(notBoughtSum);
 
+let asc = true;
 
+if (asc){
+shoppingList.sort((a, b) => a.sum > b.sum ? 1 : -1);
+    // shoppingList.forEach(item => console.log('sum asc', item.sum));
+} else {
+    shoppingList.sort((a, b) => a.sum < b.sum ? 1 : -1);
+    // shoppingList.forEach(item => console.log('sum desc', item.sum));
+}
 
-
-
-
+shoppingList.forEach(item => console.log('asc', item.name));
