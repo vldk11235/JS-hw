@@ -13,7 +13,7 @@ let shoppingList = [
         name: 'nails',
         quantity: 117,
         isBought: false,
-        price: 0.35,
+        price: 1,
         sum: null,
     },
     {
@@ -43,10 +43,10 @@ shoppingList.forEach(item => console.log(item.name));
 
 let setBought = (name) => {
     shoppingList.forEach(item => {
-       if(item.name === name) {
-           item.isBought = true;
-       }
-    } )
+        if (item.name === name) {
+            item.isBought = true;
+        }
+    })
 }
 //changing our isBought to true
 
@@ -55,16 +55,6 @@ let deleteTheItem = name => shoppingList.filter(item => item.name !== name);
 let filteredArray = deleteTheItem('apple');
 //creating new array without apples
 console.log('apple', filteredArray);
-
-
-
-
-
-
-
-
-
-
 
 
 let addItem = (name, quantity, price) => {
@@ -82,14 +72,52 @@ let addItem = (name, quantity, price) => {
 
 }
 
-// addItem('apple', 3,);
+addItem('apple', 3,);
 //adding item that we already have
-addItem('grenades',10,6.66);
+addItem('grenades', 10, 6.66);
 //adding some grenades to our shopping list
 
 console.log(shoppingList);
 
 
+let itemsSum = 0;
+
+//creating zero sum of all items to be changed with new function
+
+let getSum = () => {
+    shoppingList.forEach(item => {
+        if (item.isBought) {
+            item.sum = item.price * item.quantity;
+            itemsSum += item.sum;
+        }
+    })
+}
+
+//looking through every item and if we buy this item we add a sum into our itemsSum variable
+
+getSum();
+
+console.log(itemsSum);
+
+
+let notBoughtSum = 0;
+
+// zero sum for items that had not been bought
+
+let getNotBoughtSum = () => {
+    shoppingList.forEach(item => {
+        if (!item.isBought) {
+            item.sum = item.price * item.quantity;
+            notBoughtSum += item.sum;
+            console.log ('check', notBoughtSum);
+        }
+    })
+
+}
+
+getNotBoughtSum();
+
+console.log(notBoughtSum);
 
 
 
