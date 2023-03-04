@@ -118,25 +118,35 @@ let lightChange = document.getElementById('lightsButton');
 
 let currentLight = 'red';
 
+let previousLight;
+
 lightChange.onclick = function () {
 
     if (currentLight === 'red') {
         redLight.classList.remove('red-light');
         redLight.classList.add('no-light');
         yellowLight.classList.add('yellow-light');
+        previousLight = 'red';
         return currentLight = 'yellow';
     }
 
     if (currentLight === 'yellow') {
         yellowLight.classList.remove('yellow-light');
-        greenLight.classList.add('green-light');
-        return currentLight = 'green';
+        if (previousLight === 'green') {
+            redLight.classList.add('red-light');
+            console.log('red', redLight);
+        } else {
+            greenLight.classList.add('green-light');
+            console.log('green', greenLight);
+        }
+        return currentLight = (previousLight === 'red') ? 'green' : 'red' ;
     }
 
     if (currentLight === 'green') {
         greenLight.classList.remove('green-light');
-        redLight.classList.add('red-light');
-        return currentLight = 'red';
+        yellowLight.classList.add('yellow-light');
+        previousLight = 'green';
+        return currentLight = 'yellow';
     }
 
 }
