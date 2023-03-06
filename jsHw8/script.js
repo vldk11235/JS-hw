@@ -38,17 +38,17 @@ let tableData = document.getElementById('tbl');
 let tableContent = [
     {
         name: 'Zasha',
-        age: 7,
+        age: 3,
         country: 'Ukraine',
     },
     {
         name: 'Kasha',
-        age: 86,
+        age: 34,
         country: 'Spain',
     },
     {
         name: 'Arisha',
-        age: 2,
+        age: 12,
         country: 'Canada',
     },
 
@@ -56,7 +56,7 @@ let tableContent = [
 
 
 setTable();
-filterTable('age', 'asc');
+// filterTable('age', 'asc');
 // filterTable('age', 'desc');
 // filterTable('name', 'desc');
 // filterTable('name', 'asc');
@@ -108,13 +108,13 @@ function filterTable(key, dir) {
     setTable();
 }
 
-setEventListeners();
+// setEventListeners();
 
 function  setEventListeners(){
 
    let titles = Array.from(document.getElementsByClassName('tableTitle'));
    titles.forEach((item)=> {
-       item.addEventListener('click', filterTable, );
+       item.addEventListener('click', filterTable);
    })
 
 }
