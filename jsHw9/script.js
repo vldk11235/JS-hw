@@ -21,7 +21,7 @@ let guitarSwiper = new Swiper('.guitarsSwiper', {
     // Optional parameters
     slidesPerView: 5,
     spaceBetween: 20,
-    direction: 'horizontal',
+    // direction: 'horizontal',
     loop: true,
     autoplay: false,
     navigation: {
@@ -39,7 +39,7 @@ let partnersSwiper = new Swiper('.partnersSwiper', {
     spaceBetween: 34,
     direction: 'horizontal',
     loop: true,
-    loopedSlides: 1,
+    // loopedSlides: 1,
     autoplay: false,
     navigation: {
         nextEl: '.partners-button-next',
@@ -48,4 +48,20 @@ let partnersSwiper = new Swiper('.partnersSwiper', {
 
 
 
+});
+
+
+
+let swiper = new Swiper(".mySwiper", {
+    slidesPerView: 5,
+    spaceBetween: 20,
+    loop: true,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
 });
